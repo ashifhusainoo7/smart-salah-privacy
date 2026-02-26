@@ -6,713 +6,513 @@
     <title>Smart Salah - Privacy Policy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #06080f;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --bg-card-hover: rgba(255, 255, 255, 0.06);
-            --accent: #3ecf8e;
-            --accent-dim: rgba(62, 207, 142, 0.12);
-            --accent-glow: rgba(62, 207, 142, 0.25);
-            --text-primary: #f0f0f0;
-            --text-secondary: #a0a8b8;
-            --text-muted: #5a6378;
+            --bg-deep: #1a1730;
+            --bg-mid: #252242;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.07);
+            --gold: #d4b560;
+            --gold-dim: rgba(212, 181, 96, 0.12);
+            --gold-glow: rgba(212, 181, 96, 0.25);
+            --lavender: #a599c9;
+            --lavender-dim: rgba(165, 153, 201, 0.12);
+            --purple: #6e5faa;
+            --purple-dim: rgba(110, 95, 170, 0.15);
+            --blue-steel: #5a6d8a;
+            --text-primary: #f0ecf8;
+            --text-secondary: #b0a8c4;
+            --text-muted: #6e6488;
             --border: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(62, 207, 142, 0.2);
-            --gold: #d4a853;
-            --purple: #8b7cf6;
+            --border-hover: rgba(212, 181, 96, 0.2);
+            --navy: #12101f;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-primary);
+            background: var(--bg-deep);
             color: var(--text-secondary);
             line-height: 1.75;
             overflow-x: hidden;
         }
 
-        /* Ambient background */
+        /* ── Ambient background ── */
         .ambient {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             pointer-events: none;
             z-index: 0;
             overflow: hidden;
         }
-
         .ambient .orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.3;
-            animation: float 20s ease-in-out infinite;
+            filter: blur(130px);
+            opacity: 0.35;
+            animation: drift 24s ease-in-out infinite;
+        }
+        .orb-1 {
+            width: 650px; height: 650px;
+            background: radial-gradient(circle, rgba(110,95,170,0.22), transparent 70%);
+            top: -220px; right: -220px;
+        }
+        .orb-2 {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(212,181,96,0.12), transparent 70%);
+            bottom: 15%; left: -180px;
+            animation-delay: -8s;
+        }
+        .orb-3 {
+            width: 420px; height: 420px;
+            background: radial-gradient(circle, rgba(90,109,138,0.14), transparent 70%);
+            top: 50%; right: -120px;
+            animation-delay: -16s;
+        }
+        @keyframes drift {
+            0%,100% { transform: translate(0,0) scale(1); }
+            33% { transform: translate(25px,-25px) scale(1.04); }
+            66% { transform: translate(-20px,18px) scale(0.96); }
         }
 
-        .ambient .orb-1 {
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(62, 207, 142, 0.15), transparent 70%);
-            top: -200px;
-            right: -200px;
-            animation-delay: 0s;
-        }
-
-        .ambient .orb-2 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(139, 124, 246, 0.1), transparent 70%);
-            bottom: 20%;
-            left: -150px;
-            animation-delay: -7s;
-        }
-
-        .ambient .orb-3 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(212, 168, 83, 0.08), transparent 70%);
-            top: 50%;
-            right: -100px;
-            animation-delay: -14s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.05); }
-            66% { transform: translate(-20px, 20px) scale(0.95); }
-        }
-
-        /* Hero section */
+        /* ── Hero ── */
         .hero {
-            position: relative;
-            z-index: 1;
-            padding: 80px 24px 60px;
+            position: relative; z-index: 1;
+            padding: 72px 24px 56px;
             text-align: center;
-            border-bottom: 1px solid var(--border);
-            background: linear-gradient(180deg, rgba(62, 207, 142, 0.04) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(110,95,170,0.08) 0%, transparent 100%);
         }
-
         .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
+            content:'';
+            position: absolute; bottom: 0; left: 50%;
             transform: translateX(-50%);
-            width: 200px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            width: 180px; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
-
         .hero-logo {
-            margin-bottom: 28px;
-            animation: fadeInUp 0.8s ease-out;
+            margin-bottom: 24px;
+            animation: fadeUp .8s ease-out;
         }
-
         .hero-logo img {
-            max-width: 280px;
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 8px 32px rgba(62, 207, 142, 0.2));
-            transition: filter 0.4s ease;
+            max-width: 260px; width: 100%; height: auto;
+            filter: drop-shadow(0 10px 36px rgba(110,95,170,0.35));
+            transition: filter .4s;
         }
-
         .hero-logo img:hover {
-            filter: drop-shadow(0 12px 48px rgba(62, 207, 142, 0.35));
+            filter: drop-shadow(0 14px 52px rgba(212,181,96,0.3));
         }
-
         .hero h1 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5.5vw, 3.4rem);
             font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #ffffff 0%, var(--accent) 50%, var(--gold) 100%);
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #f0ecf8 0%, var(--gold) 55%, var(--lavender) 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: shimmer 4s linear infinite, fadeInUp 0.8s ease-out 0.15s both;
+            animation: shimmer 5s linear infinite, fadeUp .8s ease-out .12s both;
         }
-
         @keyframes shimmer {
             0% { background-position: 0% center; }
             100% { background-position: 200% center; }
         }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            font-weight: 500;
+        .hero-sub {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: .88rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: .22em;
             color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            margin-top: 12px;
-            animation: fadeInUp 0.8s ease-out 0.3s both;
+            margin-top: 10px;
+            animation: fadeUp .8s ease-out .25s both;
         }
-
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 24px;
+            display: inline-flex; align-items: center; gap: 8px;
+            margin-top: 22px;
             padding: 8px 20px;
-            background: var(--accent-dim);
-            border: 1px solid rgba(62, 207, 142, 0.15);
+            background: var(--gold-dim);
+            border: 1px solid rgba(212,181,96,0.15);
             border-radius: 100px;
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: var(--accent);
-            animation: fadeInUp 0.8s ease-out 0.45s both;
+            font-size: .8rem; font-weight: 500;
+            color: var(--gold);
+            animation: fadeUp .8s ease-out .38s both;
         }
-
         .hero-badge .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--gold);
             animation: pulse 2s ease-in-out infinite;
         }
-
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.8); }
+            0%,100% { opacity:1; transform:scale(1); }
+            50% { opacity:.45; transform:scale(.75); }
+        }
+        @keyframes fadeUp {
+            from { opacity:0; transform:translateY(22px); }
+            to { opacity:1; transform:translateY(0); }
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Navigation */
+        /* ── TOC ── */
         .toc {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 48px 24px 16px;
+            position: relative; z-index:1;
+            max-width: 900px; margin: 0 auto;
+            padding: 44px 24px 12px;
         }
-
         .toc-label {
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--text-muted);
-            margin-bottom: 16px;
+            font-size: .7rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: .16em;
+            color: var(--text-muted); margin-bottom: 14px;
         }
-
         .toc-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 8px;
+            grid-template-columns: repeat(auto-fill, minmax(195px,1fr));
+            gap: 6px;
         }
-
         .toc-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 14px; border-radius: 10px;
+            font-size: .84rem; font-weight: 500;
             color: var(--text-secondary);
             text-decoration: none;
-            transition: all 0.25s ease;
             border: 1px solid transparent;
+            transition: all .25s;
         }
-
         .toc-item:hover {
             background: var(--bg-card-hover);
             border-color: var(--border-hover);
             color: var(--text-primary);
             transform: translateX(4px);
         }
-
         .toc-item .num {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--accent);
-            background: var(--accent-dim);
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 7px;
-            flex-shrink: 0;
+            font-size: .68rem; font-weight: 700;
+            color: var(--gold);
+            background: var(--gold-dim);
+            width: 24px; height: 24px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 7px; flex-shrink: 0;
         }
 
-        /* Content */
+        /* ── Content ── */
         .content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 24px 24px 80px;
+            position: relative; z-index:1;
+            max-width: 900px; margin: 0 auto;
+            padding: 20px 24px 80px;
         }
-
-        .section {
-            margin-bottom: 12px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .section:nth-child(1) { animation-delay: 0.1s; }
-        .section:nth-child(2) { animation-delay: 0.15s; }
-        .section:nth-child(3) { animation-delay: 0.2s; }
-        .section:nth-child(4) { animation-delay: 0.25s; }
-        .section:nth-child(5) { animation-delay: 0.3s; }
-        .section:nth-child(6) { animation-delay: 0.35s; }
-        .section:nth-child(7) { animation-delay: 0.4s; }
-        .section:nth-child(8) { animation-delay: 0.45s; }
-        .section:nth-child(9) { animation-delay: 0.5s; }
-        .section:nth-child(10) { animation-delay: 0.55s; }
+        .section { margin-bottom: 12px; }
 
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.35s ease;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            border-radius: 18px;
+            padding: 30px 32px;
+            transition: all .35s;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
-
         .card:hover {
             background: var(--bg-card-hover);
             border-color: var(--border-hover);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--border-hover);
+            box-shadow: 0 8px 44px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.04);
         }
 
         .section-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 20px;
+            display: flex; align-items: center; gap: 14px;
+            margin-bottom: 18px;
         }
-
         .section-icon {
-            width: 42px;
-            height: 42px;
+            width: 42px; height: 42px;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.15rem;
-            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.15rem; flex-shrink: 0;
         }
-
-        .icon-intro { background: linear-gradient(135deg, rgba(62, 207, 142, 0.15), rgba(62, 207, 142, 0.05)); }
-        .icon-collect { background: linear-gradient(135deg, rgba(139, 124, 246, 0.15), rgba(139, 124, 246, 0.05)); }
-        .icon-use { background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0.05)); }
-        .icon-share { background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(251, 191, 36, 0.05)); }
-        .icon-security { background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(244, 114, 182, 0.05)); }
-        .icon-rights { background: linear-gradient(135deg, rgba(52, 211, 153, 0.15), rgba(52, 211, 153, 0.05)); }
-        .icon-children { background: linear-gradient(135deg, rgba(248, 113, 113, 0.15), rgba(248, 113, 113, 0.05)); }
-        .icon-third { background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(167, 139, 250, 0.05)); }
-        .icon-changes { background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(251, 146, 60, 0.05)); }
-        .icon-contact { background: linear-gradient(135deg, rgba(45, 212, 191, 0.15), rgba(45, 212, 191, 0.05)); }
+        /* icon tints — purple & gold family */
+        .ic-1 { background: linear-gradient(135deg, rgba(212,181,96,.18), rgba(212,181,96,.06)); }
+        .ic-2 { background: linear-gradient(135deg, rgba(110,95,170,.18), rgba(110,95,170,.06)); }
+        .ic-3 { background: linear-gradient(135deg, rgba(90,109,138,.18), rgba(90,109,138,.06)); }
+        .ic-4 { background: linear-gradient(135deg, rgba(165,153,201,.18), rgba(165,153,201,.06)); }
+        .ic-5 { background: linear-gradient(135deg, rgba(212,181,96,.14), rgba(110,95,170,.08)); }
+        .ic-6 { background: linear-gradient(135deg, rgba(110,95,170,.14), rgba(212,181,96,.06)); }
+        .ic-7 { background: linear-gradient(135deg, rgba(165,153,201,.14), rgba(90,109,138,.06)); }
+        .ic-8 { background: linear-gradient(135deg, rgba(90,109,138,.14), rgba(165,153,201,.06)); }
+        .ic-9 { background: linear-gradient(135deg, rgba(212,181,96,.12), rgba(165,153,201,.08)); }
+        .ic-10{ background: linear-gradient(135deg, rgba(212,181,96,.20), rgba(110,95,170,.10)); }
 
         h2 {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-size: 1.18rem; font-weight: 700;
             color: var(--text-primary);
-            letter-spacing: -0.01em;
         }
-
         h3 {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
+            font-size: .94rem; font-weight: 600;
             color: var(--text-primary);
-            margin-top: 24px;
-            margin-bottom: 10px;
+            margin: 22px 0 10px;
             padding-left: 12px;
-            border-left: 2px solid var(--accent);
+            border-left: 2px solid var(--gold);
         }
-
         p {
-            margin-bottom: 14px;
-            font-size: 0.92rem;
+            margin-bottom: 13px;
+            font-size: .91rem;
             color: var(--text-secondary);
         }
+        strong { color: var(--text-primary); font-weight: 600; }
 
-        ul {
-            list-style: none;
-            margin: 12px 0 16px 0;
-            padding: 0;
-        }
-
+        ul { list-style: none; margin: 10px 0 14px; padding: 0; }
         ul li {
             position: relative;
-            padding: 8px 0 8px 24px;
-            font-size: 0.92rem;
-            color: var(--text-secondary);
+            padding: 7px 0 7px 24px;
+            font-size: .91rem;
         }
-
         ul li::before {
             content: '';
-            position: absolute;
-            left: 0;
-            top: 16px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-            opacity: 0.6;
-        }
-
-        ul li strong {
-            color: var(--text-primary);
-            font-weight: 600;
+            position: absolute; left: 2px; top: 15px;
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--gold); opacity: .55;
         }
 
         a {
-            color: var(--accent);
+            color: var(--gold);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.2s ease;
             border-bottom: 1px solid transparent;
+            transition: all .2s;
         }
+        a:hover { border-bottom-color: var(--gold); }
 
-        a:hover {
-            border-bottom-color: var(--accent);
-        }
-
-        /* Contact card special */
+        /* Contact CTA */
         .contact-card {
-            background: linear-gradient(135deg, rgba(62, 207, 142, 0.06), rgba(139, 124, 246, 0.04));
-            border-color: rgba(62, 207, 142, 0.12);
+            background: linear-gradient(135deg, rgba(212,181,96,.05), rgba(110,95,170,.04));
+            border-color: rgba(212,181,96,.12);
         }
-
         .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, var(--accent), #2ba86e);
-            color: #06080f;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border-radius: 12px;
-            border-bottom: none;
-            transition: all 0.3s ease;
-            margin-top: 8px;
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 13px 28px;
+            background: linear-gradient(135deg, var(--gold), #c4a24e);
+            color: var(--navy); font-weight: 700; font-size: .88rem;
+            border-radius: 12px; border-bottom: none;
+            transition: all .3s; margin-top: 8px;
         }
-
         .contact-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px var(--accent-glow);
+            box-shadow: 0 10px 28px var(--gold-glow);
             border-bottom: none;
         }
 
-        /* Footer */
+        /* ── Footer ── */
         .footer {
-            position: relative;
-            z-index: 1;
+            position: relative; z-index:1;
             text-align: center;
-            padding: 40px 24px;
+            padding: 36px 24px;
             border-top: 1px solid var(--border);
         }
-
-        .footer-inner {
-            max-width: 900px;
-            margin: 0 auto;
+        .footer p { font-size: .78rem; color: var(--text-muted); margin-bottom: 5px; }
+        .footer a { color: var(--gold); font-size: .78rem; }
+        .footer .line {
+            width: 40px; height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--purple));
+            margin: 14px auto; border-radius: 2px;
         }
 
-        .footer p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-        }
-
-        .footer a {
-            color: var(--accent);
-            font-weight: 500;
-            font-size: 0.8rem;
-        }
-
-        .footer .divider {
-            width: 40px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), var(--purple));
-            margin: 16px auto;
-            border-radius: 2px;
-        }
-
-        /* Scroll reveal */
+        /* ── Scroll reveal ── */
         .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            opacity: 0; transform: translateY(26px);
+            transition: opacity .55s ease, transform .55s ease;
         }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
+        /* ── Responsive ── */
         @media (max-width: 640px) {
-            .hero {
-                padding: 56px 20px 44px;
-            }
-
-            .hero-logo img {
-                max-width: 200px;
-            }
-
-            .card {
-                padding: 22px 18px;
-                border-radius: 14px;
-            }
-
-            .toc-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header {
-                gap: 10px;
-            }
-
-            .section-icon {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-            }
-
-            h2 {
-                font-size: 1.05rem;
-            }
+            .hero { padding: 52px 18px 40px; }
+            .hero-logo img { max-width: 190px; }
+            .card { padding: 20px 18px; border-radius: 14px; }
+            .toc-grid { grid-template-columns: 1fr 1fr; }
+            .section-icon { width: 36px; height: 36px; font-size: 1rem; }
+            h2 { font-size: 1.04rem; }
+        }
+        @media (max-width: 400px) {
+            .toc-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Ambient background -->
-    <div class="ambient">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
+<div class="ambient">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-logo">
+        <img src="logo.png" alt="Smart Salah">
     </div>
+    <h1>Privacy Policy</h1>
+    <p class="hero-sub">Smart Salah &middot; Prayer Focus</p>
+    <div class="hero-badge">
+        <span class="dot"></span>
+        Last updated &mdash; February 26, 2026
+    </div>
+</section>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-logo">
-            <img src="logo.png" alt="Smart Salah">
+<!-- TOC -->
+<nav class="toc">
+    <div class="toc-label">Contents</div>
+    <div class="toc-grid">
+        <a href="#s1" class="toc-item"><span class="num">01</span> Introduction</a>
+        <a href="#s2" class="toc-item"><span class="num">02</span> Data Collection</a>
+        <a href="#s3" class="toc-item"><span class="num">03</span> Data Usage</a>
+        <a href="#s4" class="toc-item"><span class="num">04</span> Sharing</a>
+        <a href="#s5" class="toc-item"><span class="num">05</span> Security</a>
+        <a href="#s6" class="toc-item"><span class="num">06</span> Your Rights</a>
+        <a href="#s7" class="toc-item"><span class="num">07</span> Children</a>
+        <a href="#s8" class="toc-item"><span class="num">08</span> Third-Party</a>
+        <a href="#s9" class="toc-item"><span class="num">09</span> Changes</a>
+        <a href="#s10" class="toc-item"><span class="num">10</span> Contact</a>
+    </div>
+</nav>
+
+<!-- Sections -->
+<main class="content">
+
+    <div class="section reveal" id="s1"><div class="card">
+        <div class="section-header">
+            <div class="section-icon ic-1">&#x1F54C;</div>
+            <h2>Introduction</h2>
         </div>
-        <h1>Privacy Policy</h1>
-        <p class="hero-subtitle">Smart Salah</p>
-        <div class="hero-badge">
-            <span class="dot"></span>
-            Last updated: February 26, 2026
+        <p>Welcome to <strong>Smart Salah</strong> ("we," "our," or "us"). We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner.</p>
+        <p>This Privacy Policy describes how we collect, use, and share information when you use our Smart Salah mobile application (the "App"). By downloading, installing, or using the App, you agree to the terms described herein. If you do not agree, please do not use the App.</p>
+    </div></div>
+
+    <div class="section reveal" id="s2"><div class="card">
+        <div class="section-header">
+            <div class="section-icon ic-2">&#x1F4CB;</div>
+            <h2>Information We Collect</h2>
         </div>
-    </section>
+        <h3>Information You Provide</h3>
+        <ul>
+            <li><strong>Account Information:</strong> If you create an account, we may collect your name, email address, and authentication credentials.</li>
+            <li><strong>User Preferences:</strong> Prayer notification settings, preferred calculation method, Do Not Disturb preferences, and other customization options.</li>
+        </ul>
+        <h3>Information Collected Automatically</h3>
+        <ul>
+            <li><strong>Location Data:</strong> With your permission, we collect your device's geographic location to calculate accurate prayer times. This data is processed locally and is not stored on our servers.</li>
+            <li><strong>Device Information:</strong> Device type, operating system version, unique device identifiers, and general diagnostic data.</li>
+            <li><strong>Usage Data:</strong> App usage patterns, features accessed, and interaction logs to help us improve the experience.</li>
+        </ul>
+        <h3>Notifications &amp; Permissions</h3>
+        <ul>
+            <li><strong>Notification Access:</strong> To send prayer time reminders and alerts.</li>
+            <li><strong>Do Not Disturb Access:</strong> To automatically enable DND mode during prayer times, if enabled.</li>
+            <li><strong>Location Access:</strong> To determine accurate prayer times based on your geographic position.</li>
+        </ul>
+    </div></div>
 
-    <!-- Table of Contents -->
-    <nav class="toc">
-        <div class="toc-label">Contents</div>
-        <div class="toc-grid">
-            <a href="#introduction" class="toc-item"><span class="num">01</span> Introduction</a>
-            <a href="#collection" class="toc-item"><span class="num">02</span> Data Collection</a>
-            <a href="#usage" class="toc-item"><span class="num">03</span> Data Usage</a>
-            <a href="#sharing" class="toc-item"><span class="num">04</span> Sharing</a>
-            <a href="#security" class="toc-item"><span class="num">05</span> Security</a>
-            <a href="#rights" class="toc-item"><span class="num">06</span> Your Rights</a>
-            <a href="#children" class="toc-item"><span class="num">07</span> Children</a>
-            <a href="#thirdparty" class="toc-item"><span class="num">08</span> Third-Party</a>
-            <a href="#changes" class="toc-item"><span class="num">09</span> Changes</a>
-            <a href="#contact" class="toc-item"><span class="num">10</span> Contact</a>
+    <div class="section reveal" id="s3"><div class="card">
+        <div class="section-header">
+            <div class="section-icon ic-3">&#x2699;&#xFE0F;</div>
+            <h2>How We Use Your Information</h2>
         </div>
-    </nav>
+        <ul>
+            <li>To calculate and display accurate prayer times based on your location.</li>
+            <li>To send prayer time notifications and reminders.</li>
+            <li>To enable Do Not Disturb functionality during prayer times.</li>
+            <li>To personalize your App experience and remember your preferences.</li>
+            <li>To improve, maintain, and optimize our App and services.</li>
+            <li>To communicate with you regarding updates, support, or service-related announcements.</li>
+            <li>To detect, prevent, and address technical issues or security concerns.</li>
+        </ul>
+    </div></div>
 
-    <!-- Content -->
-    <main class="content">
-
-        <div class="section reveal" id="introduction">
-            <div class="card">
-                <div class="section-header">
-                    <div class="section-icon icon-intro">&#x1F54C;</div>
-                    <h2>Introduction</h2>
-                </div>
-                <p>Welcome to <strong>Smart Salah</strong> ("we," "our," or "us"). We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner.</p>
-                <p>This Privacy Policy describes how we collect, use, and share information when you use our Smart Salah mobile application (the "App"). By downloading, installing, or using the App, you agree to the terms described herein. If you do not agree with this policy, please do not use the App.</p>
-            </div>
+    <div class="section reveal" id="s4"><div class="card">
+        <div class="section-header">
+            <div class="section-icon ic-4">&#x1F91D;</div>
+            <h2>Information Sharing &amp; Disclosure</h2>
         </div>
+        <p>We do <strong>not</strong> sell, trade, or rent your personal information to third parties. We may share your information only in the following limited circumstances:</p>
+        <ul>
+            <li><strong>Service Providers:</strong> Trusted third-party providers who assist us in operating the App, subject to strict confidentiality obligations.</li>
+            <li><strong>Legal Requirements:</strong> When required by law or in response to valid requests by public authorities.</li>
+            <li><strong>Protection of Rights:</strong> To protect our rights, privacy, safety, or property, or that of our users or the public.</li>
+        </ul>
+    </div></div>
 
-        <div class="section reveal" id="collection">
-            <div class="card">
-                <div class="section-header">
-                    <div class="section-icon icon-collect">&#x1F4CB;</div>
-                    <h2>Information We Collect</h2>
-                </div>
-
-                <h3>Information You Provide</h3>
-                <ul>
-                    <li><strong>Account Information:</strong> If you create an account, we may collect your name, email address, and authentication credentials.</li>
-                    <li><strong>User Preferences:</strong> Prayer notification settings, preferred calculation method, Do Not Disturb preferences, and other customization options you configure within the App.</li>
-                </ul>
-
-                <h3>Information Collected Automatically</h3>
-                <ul>
-                    <li><strong>Location Data:</strong> With your permission, we collect your device's geographic location to calculate accurate prayer times. This data is processed locally on your device and is not stored on our servers.</li>
-                    <li><strong>Device Information:</strong> Device type, operating system version, unique device identifiers, and general diagnostic data.</li>
-                    <li><strong>Usage Data:</strong> App usage patterns, features accessed, and interaction logs to help us improve the App experience.</li>
-                </ul>
-
-                <h3>Notifications &amp; Permissions</h3>
-                <ul>
-                    <li><strong>Notification Access:</strong> To send prayer time reminders and alerts.</li>
-                    <li><strong>Do Not Disturb Access:</strong> To automatically enable DND mode during prayer times, if you enable this feature.</li>
-                    <li><strong>Location Access:</strong> To determine accurate prayer times based on your geographic position.</li>
-                </ul>
-            </div>
+    <div class="section reveal" id="s5"><div class="card">
+        <div class="section-header">
+            <div class="section-icon ic-5">&#x1F512;</div>
+            <h2>Data Storage &amp; Security</h2>
         </div>
+        <p>We implement appropriate administrative, technical, and physical security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+        <p>Most of your data, including prayer preferences and location data, is <strong>processed and stored locally on your device</strong>. We minimize server-side data collection to protect your privacy. However, no method of electronic transmission or storage is 100% secure.</p>
+    </div></div>
 
-        <div class="section reveal" id="usage">
-            <div class="card">
-                <div class="section-header">
-                    <div class="section-icon icon-use">&#x2699;&#xFE0F;</div>
-                    <h2>How We Use Your Information</h2>
-                </div>
-                <ul>
-                    <li>To calculate and display accurate prayer times based on your location.</li>
-                    <li>To send prayer time notifications and reminders.</li>
-                    <li>To enable Do Not Disturb functionality during prayer times.</li>
-                    <li>To personalize your App experience and remember your preferences.</li>
-                    <li>To improve, maintain, and optimize our App and services.</li>
-                    <li>To communicate with you regarding updates, support, or service-related announcements.</li>
-                    <li>To detect, prevent, and address technical issues or security concerns.</li>
-                </ul>
-            </div>
+    <div class="section reveal" id="s6"><div class="card">
+        <div class="section-header">
+            <div class="section-icon ic-6">&#x2696;&#xFE0F;</div>
+            <h2>Your Rights</h2>
         </div>
+        <p>Depending on your jurisdiction, you may have the following rights:</p>
+        <ul>
+            <li><strong>Access</strong> &mdash; Request a copy of the personal information we hold about you.</li>
+            <li><strong>Correction</strong> &mdash; Request correction of inaccurate or incomplete information.</li>
+            <li><strong>Deletion</strong> &mdash; Request deletion of your personal information.</li>
+            <li><strong>Restriction</strong> &mdash; Request that we restrict processing of your information.</li>
+            <li><strong>Portability</strong> &mdash; Receive your data in a structured, machine-readable format.</li>
+            <li><strong>Objection</strong> &mdash; Object to processing for certain purposes.</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at <a href="mailto:mdashifhusain@gmail.com">mdashifhusain@gmail.com</a>.</p>
+    </div></div>
 
-        <div class="section reveal" id="sharing">
-            <div class="card">
-                <div class="section-header">
-                    <div class="section-icon icon-share">&#x1F91D;</div>
-                    <h2>Information Sharing &amp; Disclosure</h2>
-                </div>
-                <p>We do <strong>not</strong> sell, trade, or rent your personal information to third parties. We may share your information only in the following limited circumstances:</p>
-                <ul>
-                    <li><strong>Service Providers:</strong> Trusted third-party providers who assist us in operating the App, subject to strict confidentiality obligations.</li>
-                    <li><strong>Legal Requirements:</strong> When required by law or in response to valid requests by public authorities (e.g., a court order or government agency).</li>
-                    <li><strong>Protection of Rights:</strong> To protect our rights, privacy, safety, or property, or that of our users or the public, as required or permitted by law.</li>
-                </ul>
-            </div>
+    <div class="section reveal" id="s7"><div class="card">
+        <div class="section-header">
+            <div class="section-icon ic-7">&#x1F6E1;&#xFE0F;</div>
+            <h2>Children's Privacy</h2>
         </div>
+        <p>Our App is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware of such collection without parental consent, we will delete that information promptly.</p>
+        <p>If you believe we have inadvertently collected information from a child under 13, please contact us at <a href="mailto:mdashifhusain@gmail.com">mdashifhusain@gmail.com</a>.</p>
+    </div></div>
 
-        <div class="section reveal" id="security">
-            <div class="card">
-                <div class="section-header">
-                    <div class="section-icon icon-security">&#x1F512;</div>
-                    <h2>Data Storage &amp; Security</h2>
-                </div>
-                <p>We implement appropriate administrative, technical, and physical security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
-                <p>Most of your data, including prayer preferences and location data, is <strong>processed and stored locally on your device</strong>. We minimize server-side data collection to protect your privacy. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
-            </div>
+    <div class="section reveal" id="s8"><div class="card">
+        <div class="section-header">
+            <div class="section-icon ic-8">&#x1F517;</div>
+            <h2>Third-Party Services</h2>
         </div>
+        <p>The App may integrate with third-party services (such as prayer time calculation APIs). These services have their own privacy policies, and we encourage you to review them. We are not responsible for the privacy practices of any third-party services.</p>
+    </div></div>
 
-        <div class="section reveal" id="rights">
-            <div class="card">
-                <div class="section-header">
-                    <div class="section-icon icon-rights">&#x2696;&#xFE0F;</div>
-                    <h2>Your Rights</h2>
-                </div>
-                <p>Depending on your jurisdiction, you may have the following rights regarding your personal information:</p>
-                <ul>
-                    <li><strong>Access</strong> &mdash; Request a copy of the personal information we hold about you.</li>
-                    <li><strong>Correction</strong> &mdash; Request correction of any inaccurate or incomplete personal information.</li>
-                    <li><strong>Deletion</strong> &mdash; Request deletion of your personal information, subject to certain legal exceptions.</li>
-                    <li><strong>Restriction</strong> &mdash; Request that we restrict the processing of your personal information.</li>
-                    <li><strong>Portability</strong> &mdash; Receive your personal information in a structured, commonly used, and machine-readable format.</li>
-                    <li><strong>Objection</strong> &mdash; Object to the processing of your personal information for certain purposes.</li>
-                </ul>
-                <p>To exercise any of these rights, please contact us at <a href="mailto:mdashifhusain@gmail.com">mdashifhusain@gmail.com</a>.</p>
-            </div>
+    <div class="section reveal" id="s9"><div class="card">
+        <div class="section-header">
+            <div class="section-icon ic-9">&#x1F504;</div>
+            <h2>Changes to This Policy</h2>
         </div>
+        <p>We may update this Privacy Policy from time to time. When we make changes, we will update the "Last Updated" date at the top of this policy. We encourage you to review this policy periodically.</p>
+    </div></div>
 
-        <div class="section reveal" id="children">
-            <div class="card">
-                <div class="section-header">
-                    <div class="section-icon icon-children">&#x1F6E1;&#xFE0F;</div>
-                    <h2>Children's Privacy</h2>
-                </div>
-                <p>Our App is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13 without parental consent, we will take steps to delete that information promptly.</p>
-                <p>If you believe we have inadvertently collected information from a child under 13, please contact us at <a href="mailto:mdashifhusain@gmail.com">mdashifhusain@gmail.com</a>.</p>
-            </div>
+    <div class="section reveal" id="s10"><div class="card contact-card">
+        <div class="section-header">
+            <div class="section-icon ic-10">&#x1F4E7;</div>
+            <h2>Contact Us</h2>
         </div>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, we'd love to hear from you.</p>
+        <a href="mailto:mdashifhusain@gmail.com" class="contact-link">
+            &#x2709;&#xFE0F;&nbsp; mdashifhusain@gmail.com
+        </a>
+    </div></div>
 
-        <div class="section reveal" id="thirdparty">
-            <div class="card">
-                <div class="section-header">
-                    <div class="section-icon icon-third">&#x1F517;</div>
-                    <h2>Third-Party Services</h2>
-                </div>
-                <p>The App may contain links to or integrate with third-party services (such as prayer time calculation APIs). These third-party services have their own privacy policies, and we encourage you to review them. We are not responsible for the privacy practices of any third-party services.</p>
-            </div>
-        </div>
+</main>
 
-        <div class="section reveal" id="changes">
-            <div class="card">
-                <div class="section-header">
-                    <div class="section-icon icon-changes">&#x1F504;</div>
-                    <h2>Changes to This Policy</h2>
-                </div>
-                <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make changes, we will update the "Last Updated" date at the top of this policy.</p>
-                <p>We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.</p>
-            </div>
-        </div>
+<footer class="footer">
+    <div class="line"></div>
+    <p>&copy; 2026 Smart Salah. All rights reserved.</p>
+    <p><a href="mailto:mdashifhusain@gmail.com">mdashifhusain@gmail.com</a></p>
+</footer>
 
-        <div class="section reveal" id="contact">
-            <div class="card contact-card">
-                <div class="section-header">
-                    <div class="section-icon icon-contact">&#x1F4E7;</div>
-                    <h2>Contact Us</h2>
-                </div>
-                <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, we'd love to hear from you.</p>
-                <a href="mailto:mdashifhusain@gmail.com" class="contact-link">
-                    &#x2709;&#xFE0F;&nbsp; mdashifhusain@gmail.com
-                </a>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="divider"></div>
-            <p>&copy; 2026 Smart Salah. All rights reserved.</p>
-            <p><a href="mailto:mdashifhusain@gmail.com">mdashifhusain@gmail.com</a></p>
-        </div>
-    </footer>
-
-    <script>
-        // Scroll reveal animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
-
+<script>
+const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
